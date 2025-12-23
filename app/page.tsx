@@ -2,7 +2,7 @@ import { MouseSpotlight } from "./mouse-spotlight"
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-background text-foreground grid place-items-center p-8 relative overflow-hidden">
+    <main className="h-dvh bg-background text-foreground grid place-items-center relative overflow-hidden">
       <MouseSpotlight />
 
       <div className="flex flex-col items-center justify-center gap-16 relative z-10">
