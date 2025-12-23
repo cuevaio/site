@@ -44,7 +44,7 @@ export default function Home() {
             </svg>
           </a>
           <a
-            href="https://x.com/cueva_io"
+            href="https://x.com/cuevaio"
             target="_blank"
             rel="noopener noreferrer"
             className="text-foreground hover:text-muted-foreground transition-colors"
