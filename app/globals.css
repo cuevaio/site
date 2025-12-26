@@ -141,7 +141,7 @@
   background-image: url("/icon.png");
   background-size: cover;
   background-position: center;
-  border-radius: 50%;
+  border-radius: 0;
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
