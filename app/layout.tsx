@@ -14,6 +14,7 @@ const libreCaslon = Libre_Caslon_Display({
 export const metadata: Metadata = {
   title: "anthony",
   description: "Making something people want.",
+    generator: 'v0.app'
 };
 
 export default function RootLayout({
@@ -22,7 +23,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark bg-background">
+    <html lang="en">
       <body className={`${libreCaslon.className} font-sans antialiased`}>
         {children}
         <Analytics />
