@@ -125,13 +125,15 @@
   }
 }
 
-/* Custom cursor styling */
-.custom-cursor {
-  cursor: none;
-}
+/* Custom cursor styling — desktop (fine pointer) only */
+@media (pointer: fine) {
+  .custom-cursor {
+    cursor: none;
+  }
 
-.custom-cursor * {
-  cursor: none !important;
+  .custom-cursor * {
+    cursor: none !important;
+  }
 }
 
 .custom-cursor-image {

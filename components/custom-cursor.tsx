@@ -5,8 +5,15 @@ import { useEffect, useState } from "react"
 export function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isClicking, setIsClicking] = useState(false)
+  const [isTouchDevice, setIsTouchDevice] = useState(true)
 
   useEffect(() => {
+    setIsTouchDevice(window.matchMedia("(pointer: coarse)").matches)
+  }, [])
+
+  useEffect(() => {
+    if (isTouchDevice) return
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
     }
@@ -23,7 +30,9 @@ export function CustomCursor() {
       window.removeEventListener("mousedown", handleMouseDown)
       window.removeEventListener("mouseup", handleMouseUp)
     }
-  }, [])
+  }, [isTouchDevice])
+
+  if (isTouchDevice) return null
 
   return (
     <div
