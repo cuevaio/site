@@ -26,8 +26,6 @@
 		"@types/node": "^22",
 		"@types/react": "^19",
 		"@types/react-dom": "^19",
-		"depcheck": "^1.4.7",
-		"knip": "^6.4.1",
 		"postcss": "^8.5",
 		"raw-loader": "^4.0.2",
 		"tailwindcss": "^4.1.9",
