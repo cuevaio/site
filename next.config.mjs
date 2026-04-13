@@ -1,5 +1,13 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+	turbopack: {
+		rules: {
+			"*.md": {
+				loaders: ["raw-loader"],
+				as: "*.js",
+			},
+		},
+	},
 	async redirects() {
 		return [
 			{
@@ -14,6 +22,14 @@ const nextConfig = {
 	},
 	images: {
 		unoptimized: true,
+	},
+	webpack(config) {
+		config.module.rules.push({
+			test: /\.md$/i,
+			type: "asset/source",
+		});
+
+		return config;
 	},
 	experimental: {
 		nextScriptWorkers: true,

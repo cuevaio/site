@@ -53,8 +53,10 @@
     "react-day-picker": "9.8.0",
     "react-dom": "19.2.0",
     "react-hook-form": "^7.60.0",
+    "react-markdown": "^10.1.0",
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.4",
+    "rss-parser": "^3.13.0",
     "shaders": "2.2.24",
     "sonner": "^1.7.4",
     "tailwind-merge": "^3.3.1",
@@ -68,6 +70,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "postcss": "^8.5",
+    "raw-loader": "^4.0.2",
     "tailwindcss": "^4.1.9",
     "tw-animate-css": "1.3.3",
     "typescript": "^5.9.3"

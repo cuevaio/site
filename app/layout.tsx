@@ -1,17 +1,13 @@
 import { Analytics } from "@vercel/analytics/next";
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Libre_Caslon_Display } from "next/font/google";
+import { Geist_Mono, Space_Grotesk } from "next/font/google";
 import type React from "react";
 import "./globals.css";
 import Script from "next/script";
 import { CollectyWidget } from "@/components/collecty-widget";
 
-const _geist = Geist({ subsets: ["latin"] });
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
-const libreCaslon = Libre_Caslon_Display({
-	weight: "400",
-	subsets: ["latin"],
-});
+const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
 	title: "anthony",
@@ -26,7 +22,20 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang="en">
-			<body className={`${libreCaslon.className} font-sans antialiased`}>
+			<body className={`${spaceGrotesk.className} font-sans antialiased`}>
+				<svg aria-hidden="true" className="app-texture" focusable="false" id="texture">
+					<filter id="noise">
+						<feTurbulence
+							baseFrequency="0.8"
+							numOctaves="4"
+							stitchTiles="stitch"
+							type="fractalNoise"
+						/>
+						<feColorMatrix type="saturate" values="0" />
+					</filter>
+					<rect width="100%" height="100%" filter="url(#noise)" />
+				</svg>
+				<div aria-hidden="true" className="app-grain" />
 				{children}
 				<Analytics />
 				<Script>
