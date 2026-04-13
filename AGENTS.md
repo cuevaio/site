@@ -7,17 +7,17 @@
 - Manual post entries are stored in `data/posts.json` and merged with the live Substack RSS feed in `lib/posts.ts`.
 
 ## Commands
-- Install: `npm install`
-- Dev server: `npm run dev`
-- Build: `npm run build`
-- Start prod server: `npm run start`
-- Lint/check: `npm run check` or `npm run lint`
-- Format: `npm run format`
+- Install: `bun install`
+- Dev server: `bun run dev`
+- Build: `bun run build`
+- Start prod server: `bun run start`
+- Lint/check: `bun run check` or `bun run lint`
+- Format: `bun run format`
 
 ## Verification
 - There is no dedicated test suite or typecheck script.
-- Use `npm run check` as the default quick verification step.
-- For route or config changes, also run `npm run build` when feasible.
+- Use `bun run check` as the default quick verification step.
+- For route or config changes, also run `bun run build` when feasible.
 
 ## Important Quirks
 - Formatting/linting is handled by Biome, not ESLint or Prettier. `biome.json` uses tabs and double quotes.
