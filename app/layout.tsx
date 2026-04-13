@@ -34,24 +34,6 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${spaceGrotesk.className} font-sans antialiased`}>
-				<svg
-					aria-hidden="true"
-					className="app-texture"
-					focusable="false"
-					id="texture"
-				>
-					<filter id="noise">
-						<feTurbulence
-							baseFrequency="0.8"
-							numOctaves="4"
-							stitchTiles="stitch"
-							type="fractalNoise"
-						/>
-						<feColorMatrix type="saturate" values="0" />
-					</filter>
-					<rect width="100%" height="100%" filter="url(#noise)" />
-				</svg>
-				<div aria-hidden="true" className="app-grain" />
 				{children}
 				<Analytics />
 				<Script>

@@ -147,7 +147,7 @@
 
 .page-shell {
 	position: relative;
-	min-height: 100vh;
+	min-height: 100svh;
 	overflow: hidden;
 	background: #111111;
 	padding-top: var(--safe-top);
@@ -159,7 +159,7 @@
 	position: relative;
 	z-index: 10;
 	display: flex;
-	min-height: calc(100vh - var(--safe-top) - var(--safe-bottom));
+	min-height: calc(100svh - var(--safe-top) - var(--safe-bottom));
 	flex-direction: column;
 }
 
@@ -171,31 +171,6 @@
 	.page-shell-inner {
 		min-height: calc(100dvh - var(--safe-top) - var(--safe-bottom));
 	}
-}
-
-.app-grain {
-	position: fixed;
-	inset: 0;
-	pointer-events: none;
-	z-index: 2147483645;
-	opacity: 0.03;
-	background: rgba(255, 255, 255, 0.015);
-}
-
-.dark .app-grain {
-	opacity: 0.03;
-}
-
-.app-texture {
-	position: fixed;
-	inset: 0;
-	z-index: 2147483646;
-	width: 100vw;
-	min-height: 100vh;
-	opacity: 0.2;
-	pointer-events: none;
-	transform: translateY(0);
-	filter: contrast(60%) brightness(100%);
 }
 
 .minimal-hover {

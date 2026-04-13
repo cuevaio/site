@@ -26,7 +26,7 @@ export function ShaderBackground({
 	overlayOpacity = 0.15,
 }: ShaderBackgroundProps) {
 	return (
-		<div className="fixed inset-0 z-0" style={{ contain: "strict" }}>
+		<div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
 			<Shader className="h-full w-full">
 				{/* Layer 1: Swirl Effect */}
 				<Swirl
