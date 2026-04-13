@@ -1,5 +1,5 @@
 import { Analytics } from "@vercel/analytics/next";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Space_Grotesk } from "next/font/google";
 import type React from "react";
 import "./globals.css";
@@ -12,6 +12,16 @@ export const metadata: Metadata = {
 	title: "anthony",
 	description: "Making something people want.",
 	generator: "v0.app",
+	applicationName: "anthony",
+	appleWebApp: {
+		capable: true,
+		statusBarStyle: "black-translucent",
+		title: "anthony",
+	},
+};
+
+export const viewport: Viewport = {
+	themeColor: "#111111",
 };
 
 export default function RootLayout({

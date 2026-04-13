@@ -123,14 +123,22 @@
 
 	html {
 		background: var(--background);
+		background-color: var(--background);
 		min-height: 100%;
 	}
 
 	body {
 		@apply bg-background text-foreground;
+		background-color: var(--background);
 		position: relative;
 		min-height: 100vh;
 		isolation: isolate;
+	}
+
+	@supports (min-height: 100dvh) {
+		body {
+			min-height: 100dvh;
+		}
 	}
 }
 
