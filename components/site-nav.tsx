@@ -25,6 +25,7 @@ export function SiteNav({ currentPath }: { currentPath?: string }) {
 								<Link
 									key={link.href}
 									href={link.href}
+									prefetch={link.href === "/about"}
 									className={
 										isActive ? "minimal-hover active" : "minimal-hover"
 									}
