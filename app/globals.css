@@ -4,6 +4,8 @@
 @custom-variant dark (&:is(.dark *));
 
 :root {
+	--safe-top: env(safe-area-inset-top, 0px);
+	--safe-bottom: env(safe-area-inset-bottom, 0px);
 	--background: #111111;
 	--foreground: oklch(0.985 0 0);
 	--card: #111111;
@@ -124,6 +126,7 @@
 	html {
 		background: var(--background);
 		background-color: var(--background);
+		color-scheme: dark;
 		min-height: 100%;
 	}
 
@@ -139,6 +142,34 @@
 		body {
 			min-height: 100dvh;
 		}
+	}
+}
+
+.page-shell {
+	position: relative;
+	min-height: 100vh;
+	overflow: hidden;
+	background: #111111;
+	padding-top: var(--safe-top);
+	padding-bottom: var(--safe-bottom);
+	color: white;
+}
+
+.page-shell-inner {
+	position: relative;
+	z-index: 10;
+	display: flex;
+	min-height: calc(100vh - var(--safe-top) - var(--safe-bottom));
+	flex-direction: column;
+}
+
+@supports (min-height: 100dvh) {
+	.page-shell {
+		min-height: 100dvh;
+	}
+
+	.page-shell-inner {
+		min-height: calc(100dvh - var(--safe-top) - var(--safe-bottom));
 	}
 }
 

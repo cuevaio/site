@@ -13,7 +13,7 @@ export const metadata: Metadata = {
 
 export default function AboutPage() {
 	return (
-		<main className="relative min-h-screen overflow-hidden bg-black text-white">
+		<main className="page-shell">
 			<ShaderBackground
 				colorA="#080808"
 				colorB="#0a0a0a"
@@ -27,7 +27,7 @@ export default function AboutPage() {
 			/>
 			<GrainOverlay />
 
-			<div className="relative z-10 flex min-h-screen flex-col">
+			<div className="page-shell-inner">
 				<SiteNav currentPath="/about" />
 
 				<section className="mx-auto flex w-full max-w-[44rem] flex-1 px-5 pb-20 pt-8 md:px-6 md:pt-12">
