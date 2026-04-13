@@ -1,0 +1,17 @@
+{
+	"$schema": "https://unpkg.com/knip@latest/schema.json",
+	"entry": [
+		"app/**/*.tsx",
+		"components/**/*.tsx",
+		"lib/**/*.ts",
+		"next.config.*",
+		"postcss.config.*"
+	],
+	"project": [
+		"app/**/*.{ts,tsx}",
+		"components/**/*.{ts,tsx}",
+		"lib/**/*.{ts,tsx}",
+		"*.{ts,tsx,js,mjs,cjs}"
+	],
+	"ignore": []
+}

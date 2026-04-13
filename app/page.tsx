@@ -31,7 +31,7 @@ export default async function Home() {
 
 				<section className="mx-auto flex w-full max-w-[44rem] flex-1 px-5 pb-20 pt-8 md:px-6 md:pt-12">
 					<div className="w-full">
-							<PostList posts={posts} />
+						<PostList posts={posts} />
 					</div>
 				</section>
 

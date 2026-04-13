@@ -8,9 +8,15 @@ function normalizeHref(href?: string) {
 }
 
 export const aboutMarkdownComponents: Components = {
-	p: ({ children }) => <p className="mb-6 font-serif text-[15px] leading-8 text-white/84">{children}</p>,
+	p: ({ children }) => (
+		<p className="mb-6 font-serif text-[15px] leading-8 text-white/84">
+			{children}
+		</p>
+	),
 	em: ({ children }) => <em className="text-white italic">{children}</em>,
-	strong: ({ children }) => <strong className="font-medium text-white">{children}</strong>,
+	strong: ({ children }) => (
+		<strong className="font-medium text-white">{children}</strong>
+	),
 	a: ({ href, children }) => (
 		<a
 			href={normalizeHref(href)}

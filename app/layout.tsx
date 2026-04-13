@@ -4,7 +4,6 @@ import { Geist_Mono, Space_Grotesk } from "next/font/google";
 import type React from "react";
 import "./globals.css";
 import Script from "next/script";
-import { CollectyWidget } from "@/components/collecty-widget";
 
 const _geistMono = Geist_Mono({ subsets: ["latin"] });
 const spaceGrotesk = Space_Grotesk({ subsets: ["latin"] });
@@ -23,7 +22,12 @@ export default function RootLayout({
 	return (
 		<html lang="en">
 			<body className={`${spaceGrotesk.className} font-sans antialiased`}>
-				<svg aria-hidden="true" className="app-texture" focusable="false" id="texture">
+				<svg
+					aria-hidden="true"
+					className="app-texture"
+					focusable="false"
+					id="texture"
+				>
 					<filter id="noise">
 						<feTurbulence
 							baseFrequency="0.8"
@@ -40,13 +44,18 @@ export default function RootLayout({
 				<Analytics />
 				<Script>
 					{`
-					(function(w,d,s,osda,f,js,fjs){
-    w['CollectyWidget']=o;w[o]=w[o]||function(){(w[o].q=w[o].q||[]).push(arguments)};
-    js=d.createElement(s),fjs=d.getElementsByTagName(s)[0];
-    js.id=o;js.src=f;js.async=1;fjs.parentNode.insertBefore(js,fjs);
-  }(window,document,'script','collecty','https://collecty-production.up.railway.app/widget/4d2926f9-7035-49c6-9630-3e3e04f68dfd/widget.js'));
-  collecty('init', '4d2926f9-7035-49c6-9630-3e3e04f68dfd');
-`}
+					(function(w,d,s,o,f,js,fjs){
+					  w.CollectyWidget = o;
+					  w[o] = w[o] || function(){ (w[o].q = w[o].q || []).push(arguments); };
+					  js = d.createElement(s);
+					  fjs = d.getElementsByTagName(s)[0];
+					  js.id = o;
+					  js.src = f;
+					  js.async = true;
+					  fjs.parentNode.insertBefore(js, fjs);
+					}(window, document, "script", "collecty", "https://collecty-production.up.railway.app/widget/4d2926f9-7035-49c6-9630-3e3e04f68dfd/widget.js"));
+					window.collecty("init", "4d2926f9-7035-49c6-9630-3e3e04f68dfd");
+				`}
 				</Script>
 			</body>
 		</html>

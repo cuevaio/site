@@ -14,31 +14,43 @@ function SubstackIcon() {
 }
 
 export function PostList({ posts }: { posts: PostListItem[] }) {
-	const groups = posts.reduce<Array<{ year: string; items: PostListItem[] }>>((accumulator, post) => {
-		const year = formatPostYear(post.date);
-		const existingGroup = accumulator[accumulator.length - 1];
+	const groups = posts.reduce<Array<{ year: string; items: PostListItem[] }>>(
+		(accumulator, post) => {
+			const year = formatPostYear(post.date);
+			const existingGroup = accumulator[accumulator.length - 1];
 
-		if (existingGroup?.year === year) {
-			existingGroup.items.push(post);
+			if (existingGroup?.year === year) {
+				existingGroup.items.push(post);
+				return accumulator;
+			}
+
+			accumulator.push({ year, items: [post] });
 			return accumulator;
-		}
-
-		accumulator.push({ year, items: [post] });
-		return accumulator;
-	}, []);
+		},
+		[],
+	);
 
 	return (
 		<div className="space-y-9">
 			{groups.map((group) => (
-				<section key={group.year} className="grid grid-cols-[64px_1fr] gap-4 md:grid-cols-[80px_1fr]">
-					<h2 className="text-[13px] leading-9.5 text-white/34">{group.year}</h2>
+				<section
+					key={group.year}
+					className="grid grid-cols-[64px_1fr] gap-4 md:grid-cols-[80px_1fr]"
+				>
+					<h2 className="text-[13px] leading-9.5 text-white/34">
+						{group.year}
+					</h2>
 					<ul className="space-y-2.5">
 						{group.items.map((post) => (
 							<li key={`${post.source}-${post.link}`} className="group">
 								<a
 									href={post.link}
 									target={post.link.startsWith("/") ? undefined : "_blank"}
-									rel={post.link.startsWith("/") ? undefined : "noopener noreferrer"}
+									rel={
+										post.link.startsWith("/")
+											? undefined
+											: "noopener noreferrer"
+									}
 									className="inline-flex w-full items-center rounded-full px-3 py-1 text-[15px] leading-8 text-white/88 transition-colors duration-180 group-hover:bg-white/8 group-hover:text-white group-hover:shadow-[inset_0_0_0_1px_rgba(255,255,255,0.08)]"
 								>
 									<span className="inline-flex items-center gap-2">

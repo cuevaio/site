@@ -57,10 +57,11 @@ async function getRssPosts() {
 		.filter((item) => item.title && item.link)
 		.map((item) => {
 			const parsedDate = normalizeDate(item.isoDate ?? item.pubDate);
+			const title = item.title?.trim() ?? "Untitled";
 
 			return {
 				date: parsedDate.toISOString(),
-				title: item.title!.trim(),
+				title,
 				link: normalizeLink(item.link),
 				source: "rss" as const,
 				dateValue: parsedDate.getTime(),
@@ -69,7 +70,9 @@ async function getRssPosts() {
 }
 
 export function formatPostYear(date: string) {
-	return new Intl.DateTimeFormat("en", { year: "numeric" }).format(new Date(date));
+	return new Intl.DateTimeFormat("en", { year: "numeric" }).format(
+		new Date(date),
+	);
 }
 
 export async function getPosts() {
@@ -77,7 +80,8 @@ export async function getPosts() {
 	const manualPosts = (localPosts as RawLocalPost[]).map(normalizeLocalPost);
 
 	return [...rssPosts, ...manualPosts].sort((left, right) => {
-		if (right.dateValue !== left.dateValue) return right.dateValue - left.dateValue;
+		if (right.dateValue !== left.dateValue)
+			return right.dateValue - left.dateValue;
 		return left.title.localeCompare(right.title);
 	});
 }

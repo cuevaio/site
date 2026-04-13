@@ -3,9 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
-
-import { aboutMarkdownComponents } from "./markdown-components";
 import Me from "@/app/about/photo.jpg";
+import { aboutMarkdownComponents } from "./markdown-components";
 
 export function AboutContent({ markdown }: { markdown: string }) {
 	const [expanded, setExpanded] = useState(false);
@@ -34,12 +33,18 @@ export function AboutContent({ markdown }: { markdown: string }) {
 					alt="Anthony portrait"
 					fill
 					sizes={expanded ? "320px" : "176px"}
-					className={expanded ? "object-cover grayscale" : "object-cover grayscale scale-[2.05] translate-x-[-17%] translate-y-[15%]"}
+					className={
+						expanded
+							? "object-cover grayscale"
+							: "object-cover grayscale scale-[2.05] translate-x-[-17%] translate-y-[15%]"
+					}
 				/>
 				<div className="absolute inset-0 bg-[#FFFFFF] mix-blend-multiply" />
 			</button>
 
-			<ReactMarkdown components={aboutMarkdownComponents}>{markdown}</ReactMarkdown>
+			<ReactMarkdown components={aboutMarkdownComponents}>
+				{markdown}
+			</ReactMarkdown>
 		</article>
 	);
 }
