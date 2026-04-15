@@ -1,22 +1,27 @@
 [
-	{
-		"date": "2026-04-04",
-		"title": "Viral on Instagram",
-		"link": "https://www.instagram.com/p/DWuZDv-D-Wq/"
-	},
-	{
-		"date": "2026-04-05",
-		"title": "Local Background Remover",
-		"link": "https://local.backgroundrm.com/"
-	},
-	{
-		"date": "2025-04-20",
-		"title": "text0",
-		"link": "https://text0.vercel.app/"
-	},
-	{
-		"date": "2026-03-19",
-		"title": "Opencoder",
-		"link": "https://opencoder.cueva.io/"
-	}
+  {
+    "date": "2026-04-04",
+    "title": "Viral on Instagram",
+    "link": "https://www.instagram.com/p/DWuZDv-D-Wq/"
+  },
+  {
+    "date": "2026-04-05",
+    "title": "Local Background Remover",
+    "link": "https://local.backgroundrm.com/"
+  },
+  {
+    "date": "2025-04-20",
+    "title": "text0",
+    "link": "https://text0.vercel.app/"
+  },
+  {
+    "date": "2026-03-19",
+    "title": "Opencoder",
+    "link": "https://opencoder.cueva.io/"
+  },
+  {
+    "date": "2026-04-13",
+    "title": "Peruvian Elections 2026 Bot",
+    "link": "https://elecciones.cueva.io/"
+  }
 ]
