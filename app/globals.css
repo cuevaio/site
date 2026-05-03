@@ -39,6 +39,19 @@
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(0.269 0 0);
 	--sidebar-ring: oklch(0.439 0 0);
+	--text-primary: #f8f7f2;
+	--text-secondary: rgba(248, 247, 242, 0.86);
+	--text-muted: rgba(248, 247, 242, 0.66);
+	--text-faint: rgba(248, 247, 242, 0.5);
+	--surface-hover: rgba(248, 247, 242, 0.08);
+	--border-subtle: rgba(248, 247, 242, 0.12);
+	--border-strong: rgba(248, 247, 242, 0.28);
+	--link-decoration: rgba(248, 247, 242, 0.3);
+	--page-glow-primary: transparent;
+	--page-glow-secondary: transparent;
+	--grain-svg-opacity: 0.2;
+	--grain-texture-opacity: 0.04;
+	--portrait-overlay: #ffffff;
 }
 
 .dark {
@@ -74,6 +87,63 @@
 	--sidebar-accent-foreground: oklch(0.985 0 0);
 	--sidebar-border: oklch(0.269 0 0);
 	--sidebar-ring: oklch(0.439 0 0);
+}
+
+@media (prefers-color-scheme: light) {
+	:root {
+		--background: #f4f0e8;
+		--foreground: #17130f;
+		--card: #fffaf0;
+		--card-foreground: #17130f;
+		--popover: #fffaf0;
+		--popover-foreground: #17130f;
+		--primary: #17130f;
+		--primary-foreground: #f4f0e8;
+		--secondary: #e8dfd0;
+		--secondary-foreground: #17130f;
+		--muted: #e8dfd0;
+		--muted-foreground: rgba(23, 19, 15, 0.68);
+		--accent: #e8dfd0;
+		--accent-foreground: #17130f;
+		--destructive: #b42318;
+		--destructive-foreground: #fffaf0;
+		--border: rgba(23, 19, 15, 0.16);
+		--input: rgba(23, 19, 15, 0.16);
+		--ring: #73523f;
+		--chart-1: #9c4f24;
+		--chart-2: #3f7668;
+		--chart-3: #4c6484;
+		--chart-4: #b07a2c;
+		--chart-5: #9f5c45;
+		--sidebar: #f4f0e8;
+		--sidebar-foreground: #17130f;
+		--sidebar-primary: #17130f;
+		--sidebar-primary-foreground: #f4f0e8;
+		--sidebar-accent: #e8dfd0;
+		--sidebar-accent-foreground: #17130f;
+		--sidebar-border: rgba(23, 19, 15, 0.16);
+		--sidebar-ring: #73523f;
+		--text-primary: #17130f;
+		--text-secondary: rgba(23, 19, 15, 0.86);
+		--text-muted: rgba(23, 19, 15, 0.68);
+		--text-faint: rgba(23, 19, 15, 0.58);
+		--surface-hover: rgba(23, 19, 15, 0.07);
+		--border-subtle: rgba(23, 19, 15, 0.13);
+		--border-strong: rgba(23, 19, 15, 0.28);
+		--link-decoration: rgba(23, 19, 15, 0.36);
+		--page-glow-primary: rgba(231, 161, 93, 0.24);
+		--page-glow-secondary: rgba(115, 82, 63, 0.1);
+		--grain-svg-opacity: 0.055;
+		--grain-texture-opacity: 0.025;
+		--portrait-overlay: rgba(255, 250, 240, 0.82);
+	}
+}
+
+@media (prefers-color-scheme: light) and (max-width: 767px) {
+	:root {
+		--page-glow-primary: transparent;
+		--page-glow-secondary: transparent;
+	}
 }
 
 @theme inline {
@@ -116,6 +186,14 @@
 	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
 	--color-sidebar-border: var(--sidebar-border);
 	--color-sidebar-ring: var(--sidebar-ring);
+	--color-text-primary: var(--text-primary);
+	--color-text-secondary: var(--text-secondary);
+	--color-text-muted: var(--text-muted);
+	--color-text-faint: var(--text-faint);
+	--color-surface-hover: var(--surface-hover);
+	--color-border-subtle: var(--border-subtle);
+	--color-border-strong: var(--border-strong);
+	--color-link-decoration: var(--link-decoration);
 }
 
 @layer base {
@@ -126,7 +204,7 @@
 	html {
 		background: var(--background);
 		background-color: var(--background);
-		color-scheme: dark;
+		color-scheme: dark light;
 		min-height: 100%;
 	}
 
@@ -149,10 +227,21 @@
 	position: relative;
 	min-height: 100svh;
 	overflow: hidden;
-	background: #111111;
+	background:
+		radial-gradient(
+			circle at 50% -24%,
+			var(--page-glow-primary),
+			transparent 48%
+		),
+		radial-gradient(
+			circle at 88% 8%,
+			var(--page-glow-secondary),
+			transparent 34%
+		),
+		var(--background);
 	padding-top: var(--safe-top);
 	padding-bottom: var(--safe-bottom);
-	color: white;
+	color: var(--foreground);
 }
 
 .page-shell-inner {
@@ -186,15 +275,21 @@
 }
 
 .minimal-hover:hover {
-	color: rgba(255, 255, 255, 0.96);
-	background: rgba(255, 255, 255, 0.08);
-	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+	color: var(--text-primary);
+	background: var(--surface-hover);
+	box-shadow: inset 0 0 0 1px var(--border-subtle);
 }
 
 .minimal-hover.active {
-	color: rgba(255, 255, 255, 0.96);
-	background: rgba(255, 255, 255, 0.08);
-	box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.08);
+	color: var(--text-primary);
+	background: var(--surface-hover);
+	box-shadow: inset 0 0 0 1px var(--border-subtle);
+}
+
+@media (prefers-color-scheme: light) {
+	.shader-background {
+		display: none;
+	}
 }
 
 /* Custom cursor styling — desktop (fine pointer) only */

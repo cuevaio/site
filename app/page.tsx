@@ -12,17 +12,7 @@ export default async function Home() {
 
 	return (
 		<main className="page-shell">
-			<ShaderBackground
-				colorA="#080808"
-				colorB="#0a0a0a"
-				baseColor="#1a1a1a"
-				upColor="#0d0d0d"
-				downColor="#050505"
-				leftColor="#080808"
-				rightColor="#060606"
-				intensity={0.8}
-				overlayOpacity={0.2}
-			/>
+			<ShaderBackground />
 
 			<GrainOverlay />
 

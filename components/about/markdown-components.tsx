@@ -9,20 +9,22 @@ function normalizeHref(href?: string) {
 
 export const aboutMarkdownComponents: Components = {
 	p: ({ children }) => (
-		<p className="mb-6 font-serif text-[15px] leading-8 text-white/84">
+		<p className="mb-6 font-serif text-[15px] leading-8 text-text-secondary">
 			{children}
 		</p>
 	),
-	em: ({ children }) => <em className="text-white italic">{children}</em>,
+	em: ({ children }) => (
+		<em className="text-text-primary italic">{children}</em>
+	),
 	strong: ({ children }) => (
-		<strong className="font-medium text-white">{children}</strong>
+		<strong className="font-medium text-text-primary">{children}</strong>
 	),
 	a: ({ href, children }) => (
 		<a
 			href={normalizeHref(href)}
 			target="_blank"
 			rel="noopener noreferrer"
-			className="text-white underline decoration-white/30 underline-offset-4 transition-colors hover:text-white/72"
+			className="text-text-primary underline decoration-link-decoration underline-offset-4 transition-colors hover:text-text-muted"
 		>
 			{children}
 		</a>

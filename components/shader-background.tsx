@@ -11,22 +11,24 @@ interface ShaderBackgroundProps {
 	leftColor?: string;
 	rightColor?: string;
 	intensity?: number;
+	overlayColor?: string;
 	overlayOpacity?: number;
 }
 
 export function ShaderBackground({
 	colorA = "#080808",
-	colorB = "#110e15",
-	baseColor = "#3d3659",
-	upColor = "#1d1a28",
-	downColor = "#0a0810",
-	leftColor = "#151220",
-	rightColor = "#0e0c18",
-	intensity = 1,
-	overlayOpacity = 0.15,
+	colorB = "#0a0a0a",
+	baseColor = "#1a1a1a",
+	upColor = "#0d0d0d",
+	downColor = "#050505",
+	leftColor = "#080808",
+	rightColor = "#060606",
+	intensity = 0.8,
+	overlayColor = "#000000",
+	overlayOpacity = 0.2,
 }: ShaderBackgroundProps) {
 	return (
-		<div className="pointer-events-none absolute inset-0 z-0 hidden md:block">
+		<div className="shader-background pointer-events-none absolute inset-0 z-0 hidden md:block">
 			<Shader className="h-full w-full">
 				{/* Layer 1: Swirl Effect */}
 				<Swirl
@@ -56,10 +58,10 @@ export function ShaderBackground({
 					opacity={0.88}
 				/>
 			</Shader>
-			{/* Dark overlay */}
+			{/* Overlay keeps the decorative shader behind readable content. */}
 			<div
-				className="absolute inset-0 bg-black"
-				style={{ opacity: overlayOpacity }}
+				className="absolute inset-0"
+				style={{ backgroundColor: overlayColor, opacity: overlayOpacity }}
 			/>
 		</div>
 	);

@@ -13,7 +13,7 @@ export function AboutContent({ markdown }: { markdown: string }) {
 	const expandedHeight = 392;
 
 	return (
-		<article className="font-serif text-white/88">
+		<article className="font-serif text-text-secondary">
 			<button
 				type="button"
 				onClick={() => setExpanded((value) => !value)}
@@ -39,7 +39,7 @@ export function AboutContent({ markdown }: { markdown: string }) {
 							: "object-cover grayscale scale-[2.05] translate-x-[-17%] translate-y-[15%]"
 					}
 				/>
-				<div className="absolute inset-0 bg-[#FFFFFF] mix-blend-multiply" />
+				<div className="absolute inset-0 bg-[var(--portrait-overlay)] mix-blend-multiply" />
 			</button>
 
 			<ReactMarkdown components={aboutMarkdownComponents}>
