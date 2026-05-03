@@ -2,22 +2,26 @@
 	{
 		"date": "2026-04-04",
 		"title": "Viral on Instagram",
-		"link": "https://www.instagram.com/p/DWuZDv-D-Wq/"
+		"link": "https://www.instagram.com/p/DWuZDv-D-Wq/",
+		"description": "I have recorded a lot of video demos and product launches. This is the first one that went viral: 20k views and 600 likes."
 	},
 	{
 		"date": "2026-04-05",
 		"title": "Local Background Remover",
-		"link": "https://local.backgroundrm.com/"
+		"link": "https://local.backgroundrm.com/",
+		"description": "Why pay subscriptions or credits to remove the backgrounds of your images? I created Local Background Remover to fix that. Pay once, use your computer's resources, and remove hundreds or thousands of images. My first product with revenue."
 	},
 	{
 		"date": "2025-04-20",
 		"title": "text0",
-		"link": "https://text0.vercel.app/"
+		"link": "https://text0.vercel.app/",
+		"description": "Cursor for writers. Vercel Hackathon winner, 2025."
 	},
 	{
 		"date": "2026-03-19",
 		"title": "Opencoder",
-		"link": "https://opencoder.cueva.io/"
+		"link": "https://opencoder.cueva.io/",
+		"description": "Like Claude Code apps, but works with any model. Run opencode in the cloud."
 	},
 	{
 		"date": "2026-04-13",
