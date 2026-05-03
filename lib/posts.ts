@@ -6,6 +6,7 @@ type RawLocalPost = {
 	date: string;
 	title: string;
 	link: string;
+	description?: string;
 };
 
 export type PostListItem = {
@@ -14,6 +15,7 @@ export type PostListItem = {
 	link: string;
 	source: "rss" | "local";
 	dateValue: number;
+	description?: string;
 };
 
 const FEED_URL = "https://cuevaio.substack.com/feed";
@@ -38,6 +40,7 @@ function normalizeLocalPost(post: RawLocalPost): PostListItem {
 		link: post.link,
 		source: "local",
 		dateValue: parsedDate.getTime(),
+		description: post.description,
 	};
 }
 
